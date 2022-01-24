@@ -28,7 +28,7 @@ gcc PipesEnAccion2.c -o pipeline
 ### Estudiantes
 ```
 
-🤓 Santiago Benitez Jimenez - 2042608-3743
+🤓 Santiago Benitez Jimenez - 2042608-2711
 🤓 Julian Andres Salamanca Tellez - 1841654-3743
 🤓 Sharon Zuleta Vanegas - 1742139-2711
 
