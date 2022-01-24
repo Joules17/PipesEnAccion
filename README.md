@@ -14,7 +14,7 @@ Es sencillo ya que no necesita archivos externos, todo se realiza desde el main 
 Ejemplo de ejecucion: 
 ```
 gcc PipesEnAccion.c -o pipeline
-./pipeline "ca4 p4.c" "wc -l"
+./pipeline "cat p4.c" "wc -l"
 ```
 
 ## Punto 2 (Execvp) 
