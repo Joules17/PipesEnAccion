@@ -9,13 +9,22 @@ Desarrollo de la tarea Pipes y archivos standard
 ## Modo de ejecucion
 Es sencillo ya que no necesita archivos externos, todo se realiza desde el main de cada archivo. Por lo tanto: 
 
-```
-# Punto 1
-gcc PipesEnAccion.c -o pipeline
-## Ejemplo
-./pipeline "ca4 p4.c" "wc -l"
 
+## Punto 1: Pipes en Accion (Execlp)
+Ejemplo de ejecucion: 
 ```
+gcc PipesEnAccion.c -o pipeline
+./pipeline "ca4 p4.c" "wc -l"
+```
+
+## Punto 2 (Execvp) 
+Ejemplo de ejecucion:
+```
+gcc PipesEnAccion2.c -o pipeline
+./pipeline "cat /etc/hosts" "sort"
+```
+## Punto 3 ()
+
 ### Estudiantes
 ```
 
