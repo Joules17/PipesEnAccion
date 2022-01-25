@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 		char* primarg[argc]; 
 		char* segarg[argc]; 
 		
-		//string token 1
+		// String padre 
 		char* prim = strtok(argv[1], " ");
 		while(prim != NULL)
 		{
@@ -27,10 +27,10 @@ int main(int argc, char *argv[]) {
 			prim = strtok(NULL, " ");
 			i++; 
 		}
-        primarg[i] = NULL; 
+        primarg[i] = NULL; // padre
 		i = 0; 
 
-		// string token 2
+		// String hijo
 		char *seg = strtok(argv[2], " "); 
 		while(seg != NULL) 
 		{
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 			seg = strtok(NULL, " "); 
 			i++; 
 		}
-        segarg[i] = NULL; 
+        segarg[i] = NULL; // hijo
 
 		pid_t pid;
   		int   fd[2];
@@ -54,12 +54,11 @@ int main(int argc, char *argv[]) {
 			perror("fork() failed)");
 			exit(EXIT_FAILURE);
   		} else if (pid == 0) {
-			// The child process will execute wc.
 			// Close the pipe write descriptor.
 		close(fd[WRITE]);
 		// Redirect STDIN to read from the pipe.
 		dup2(fd[READ], STDIN_FILENO);
-		// Execute wc
+		// execlp -> Execvp
 		execvp(segarg[0], segarg); 
   		} else {
 		// The parent process will execute ls.
@@ -67,7 +66,6 @@ int main(int argc, char *argv[]) {
 		close(fd[READ]);
 		// Redirect STDOUT to write to the pipe.
 		dup2(fd[WRITE], STDOUT_FILENO);
-		// Execute ls -l
 		execvp(primarg[0], primarg); 
   		}
     // notese que a comparacion del anterior punto solo cambian las lineas de los execlp -> execvp 
