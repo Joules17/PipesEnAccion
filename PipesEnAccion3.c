@@ -9,8 +9,6 @@
 #define READ 0
 #define WRITE 1
 
-//desarrollo del punto 3
-
 int main()
 {
     pid_t pid;
